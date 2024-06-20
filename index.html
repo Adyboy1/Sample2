@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message</title>
+    <style>
+        body {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .envelope-container {
+            position: relative;
+            text-align: center;
+        }
+        .envelope-icon {
+            font-size: 288px;
+            color: red;
+            cursor: pointer;
+        }
+        .heart-message {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 72px;
+        }
+        .heart {
+            font-size: 288px;
+            color: red;
+            cursor: pointer; /* Add cursor pointer to the heart */
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope-container">
+        <div class="envelope-icon" onclick="toggleHeartMessage()">💌</div>
+        <div class="heart-message" id="heartMessage">
+            <div class="heart" onclick="toggleHeartMessage()">Click Me</div>
+            <div>
+                <p style="font-size: 72px;">I miss you, Anoushka</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var heartMessage = document.getElementById('heartMessage');
+        var heartText = document.querySelector('.heart');
+
+        function toggleHeartMessage() {
+            if (heartMessage.style.display === 'none') {
+                heartMessage.style.display = 'block';
+                heartText.textContent = '❤️'; // Change text back to heart emoji
+            } else {
+                heartMessage.style.display = 'none';
+                heartText.textContent = 'Click Me'; // Change text to Click Me
+            }
+        }
+    </script>
+</body>
+</html>
